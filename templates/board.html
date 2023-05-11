@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/static/styles.css" />
+    <title>Boggle Game</title>
+  </head>
+  <body>
+    <h1>Boggle Game</h1>
+    <form id="guess-form" method="POST">
+      <label for="guess">Enter your guess:</label>
+      <input type="text" name="word" id="word" />
+      <button type="submit">Submit</button>
+    </form>
+    <div id="score-display">Score: 0</div>
+    <div id="timer-display">Time Remaining: 60s</div>
+
+    <table>
+      {% for row in board %}
+      <tr>
+        {% for cell in row %}
+        <td>{{ cell }}</td>
+        {% endfor %}
+      </tr>
+      {% endfor %}
+    </table>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="/static/boggle.js"></script>
+  </body>
+</html>
